@@ -35,11 +35,11 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.1/css/all.css"
           integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
     <!-- CSS Files -->
-    <link href="../assets/css/bootstrap.min.css" rel="stylesheet"/>
-    <link href="../assets/css/now-ui-dashboard.css?v=1.5.0" rel="stylesheet"/>
+    <link href="{{ asset('assets/css/bootstrap.min.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('assets/css/now-ui-dashboard.css?v=1.5.0') }}" rel="stylesheet"/>
     <!-- CSS Just for demo purpose, don't include it in your project -->
-    <link href="../assets/demo/demo.css" rel="stylesheet"/>
-    <link href="../assets/css/context-menu.css" rel="stylesheet" >
+    <link href="{{ asset('assets/demo/demo.css') }}" rel="stylesheet"/>
+    <link href="{{ asset('assets/css/context-menu.css') }}" rel="stylesheet" >
 
 </head>
 
@@ -76,8 +76,18 @@
                     </a>
                 </li>
                 <li>
-                    <a href="/emailwizard.html">
-                        <p>Email Wizard</p>
+                    <a href="/statistics">
+                        <p>Recruiting Stats</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/settings.html">
+                        <p>Settings</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/help.html">
+                        <p>Help</p>
                     </a>
                 </li>
                 </li>
@@ -102,7 +112,7 @@
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="#dashboard">Table List</a>
+                    <a class="navbar-brand" href="#dashboard">@yield('pagename')</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -177,8 +187,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="http://blog.creative-tim.com">
-                                Help | Creative Tim Blog
+                            <a href="https://recruitingtool.io/">
+                                Help | Recruiting Tool
                             </a>
                         </li>
                     </ul>
@@ -196,20 +206,20 @@
     </div>
 </div>
 <!--   Core JS Files   -->
-<script src="../assets/js/core/jquery.min.js"></script>
-<script src="../assets/js/core/popper.min.js"></script>
-<script src="../assets/js/core/bootstrap.min.js"></script>
-<script src="../assets/js/plugins/perfect-scrollbar.jquery.min.js"></script>
+<script src="{{ asset('assets/js/core/jquery.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/popper.min.js') }}"></script>
+<script src="{{ asset('assets/js/core/bootstrap.min.js') }}"></script>
+<script src="{{ asset('assets/js/plugins/perfect-scrollbar.jquery.min.js') }}"></script>
 <!--  Google Maps Plugin    -->
 <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_KEY_HERE"></script>
 <!-- Chart JS -->
-<script src="../assets/js/plugins/chartjs.min.js"></script>
-<!--  Notifications Plugin    -->
-<script src="../assets/js/plugins/bootstrap-notify.js"></script>
+<script src="{{ asset('assets/js/plugins/chartjs.min.js') }}"></script>
+
+<script src="{{ asset('assets/js/plugins/bootstrap-notify.js') }}"></script>
 <!-- Control Center for Now Ui Dashboard: parallax effects, scripts for the example pages etc -->
-<script src="../assets/js/now-ui-dashboard.min.js?v=1.5.0" type="text/javascript"></script>
+<script src="{{ asset('assets/js/now-ui-dashboard.min.js?v=1.5.0') }}" type="text/javascript"></script>
 <!-- Now Ui Dashboard DEMO methods, don't include it in your project! -->
-<script src="../assets/demo/demo.js"></script>
+<script src="{{ asset('assets/demo/demo.js') }}"></script>
 </body>
 
 </html>

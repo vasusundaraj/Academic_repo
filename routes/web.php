@@ -90,7 +90,7 @@ Within IS&T, there are a variety of software engineering positions available acr
 
 Examples of positions:
 
-A majority of our positions are Software Engineers such as iOS, front-end, back-end  and full-stack
+A majority of our positions are Software Engineers such as iOS, front-end, back-end and full-stack
 
 Database Engineer
 
@@ -184,3 +184,12 @@ Route::get('/jobs/candidate_pool', array('uses' => 'App\Http\Controllers\Candida
 
 Route::get('/sendemail', 'App\Http\Controllers\SendEmailController@index');
 Route::post('sendemail/send', 'App\Http\Controllers\SendEmailController@send');
+Route::get('/sendtemplate/','App\Http\Controllers\SendtemplateController@index') ;
+Route::get('/sendtemplate/edit/{id}','App\Http\Controllers\SendtemplateController@edit') ;
+Route::post('sendtemplate/send', 'App\Http\Controllers\SendtemplateController@send');
+Route::get('/scheduler', 'App\Http\Controllers\SendEmailScheduler@index');
+Route::post('scheduler/send', 'App\Http\Controllers\SendEmailScheduler@sendschedule');
+Route::get('/getscheduleremails', 'App\Http\Controllers\SendEmailScheduler@getSchedluersData');
+Route::get('/scheduleemail', 'App\Http\Controllers\SendEmailScheduler@runSchedulerEmail');
+Route::get('/multiemail', 'App\Http\Controllers\SendEmailScheduler@multiEmails');
+Route::get('/mailSend', 'App\Http\Controllers\SendEmailController@mailSend');

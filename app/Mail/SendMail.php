@@ -16,10 +16,10 @@ class SendMail extends Mailable
      *
      * @return void
      */
-     public function __construct($data,$sub)
+     public function __construct($data,$subject)
      {
          $this->data = $data;
-         $this->sub = $sub;
+         $this->subject = $subject;
      }
 
     /**
@@ -29,6 +29,6 @@ class SendMail extends Mailable
      */
     public function build()
     {
-        return $this->from('john@webslesson.info')->subject('Hello',$this->sub)->view('layout.dynamic_email_template')->with('data', $this->data);
+        return $this->from('john@webslesson.info')->subject($this->subject['subject'])->view('layout.dynamic_email_template')->with('data', $this->data);
     }
 }

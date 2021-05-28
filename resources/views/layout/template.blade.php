@@ -4,12 +4,17 @@
     Email Templates
 @endsection
 
+@section('pagename')
+  Email Templates
+@endsection
+
 @section('content')
 
     <!-- Button trigger modal -->
 
 
     <!-- Modal -->
+    @if($layout == 'index')
     <div class="modal fade" id="addnewtemplate" tabindex="-1" role="dialog" aria-labelledby="addnewtempltateLable"
          aria-hidden="true">
         <div class="modal-dialog" role="document">
@@ -24,12 +29,12 @@
                 @csrf
                 <div class="modal-body">
                     <div class="form-group">
-                        <label> Template Name </label>
-                        <input type="text" name="templateName" class="form-control" placeholder="Enter Template Name"></input>
+                        <label> Subject </label>
+                        <input type="text" name="templateName" class="form-control" placeholder="Enter your email subject"></input>
                     </div>
                     <div class="form-group">
-                        <label> Template Body </label>
-                        <textarea name="templateBody" class="form-control"  placeholder="Enter your template body" rows="10" id="comment"></textarea>
+                        <label> Body </label>
+                        <textarea name="templateBody" class="form-control"  placeholder="Enter your email body" rows="10" id="comment"></textarea>
                     </div>
                 </div>
                 <div class="modal-footer">
@@ -40,7 +45,6 @@
             </div>
         </div>
     </div>
-
     <div class="row">
         <div class="col-md-12">
             <div class="card">
@@ -80,6 +84,64 @@
             </div>
         </div>
     </div>
+    @elseif($layout == 'show')
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                    <a href="{{ url()->previous() }}" class="btn btn-default float-right">
+                    Back</a>
+                <div class="card-header">
+                    <h4 class="card-title" id="showtemplateLabel" style="color: #2a5788" >{{$emailtemplate->templateName}} Details</h4>
+                </div>
+                <form action="{{ url('/emailtemplate/delete/'.$emailtemplate->id) }}" method="post">
+                @csrf
+                <div class="card-body">
+                    <div class="form-group">
+                        <label> Subject </label>
+                        <input value="{{ $emailtemplate->templateName }}" name="templateName" type="text" class="form-control"  placeholder="Enter your template name" readonly>
+                    </div>
+                    <div class="form-group">
+                        <label> Body </label>
+                        <textarea name="templateBody" class="form-control" rows="10" id="comment" readonly>{{ $emailtemplate->templateBody }}</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <a href="{{ url('/emailtemplate/edit/'.$emailtemplate->id) }}" class="btn btn-secondary">Edit</a>
+                    <input type="submit" class="btn btn-primary" data-dismiss="modal" value="Delete">
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @elseif($layout == 'edit')
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card">
+                    <a href="{{ url()->previous() }}" class="btn btn-default float-right">
+                    Back</a>
+                <div class="card-header">
+                    <h4 class="card-title" id="showtemplateLabel" style="color: #2a5788">Update {{$emailtemplate->templateName}} Details</h4>
+                </div>
+                <form action="{{ url('/emailtemplate/update/'.$emailtemplate->id) }}" method="post">
+                @csrf
+                <div class="card-body" style="height:100%">
+                    <div class="form-group">
+                        <label> Subject </label>
+                        <input value="{{ $emailtemplate->templateName }}" name="templateName" type="text" class="form-control"  placeholder="Enter your template name" >
+                    </div>
+                    <div class="form-group" style="height:100%">
+                        <label> Body </label>
+                        <textarea name="templateBody" class="form-control" rows="10" id="comment" > {{ $emailtemplate->templateBody }}</textarea>
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <input type="submit" class="btn btn-primary" value="Update">
+                    <a href="{{ url('/emailtemplate/show/'.$emailtemplate->id) }}" class="btn btn-secondary" data-dismiss="modal">Cancel</a>
+                </div>
+                </form>
+            </div>
+        </div>
+    </div>
+    @endif
 
-    
 @endsection

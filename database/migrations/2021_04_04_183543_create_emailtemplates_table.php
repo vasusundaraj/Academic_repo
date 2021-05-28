@@ -16,7 +16,7 @@ class CreateEmailtemplatesTable extends Migration
         Schema::create('emailtemplates', function (Blueprint $table) {
             $table->id();
             $table->string('templateName');
-            $table->string('templateBody');
+            $table->longText('templateBody');
             $table->timestamps();
         });
     }

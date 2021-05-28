@@ -71,18 +71,28 @@
                     </a>
                 </li>
                 <li>
-                    <a href="./emailtemplate/">
+                    <a href="/emailtemplate/">
                         <p>Email Templates</p>
                     </a>
                 </li>
                 <li>
-                    <a href="./emailwizard.html">
-                        <p>Email Wizard</p>
+                    <a href="/statistics">
+                        <p>Recruiting Stats</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/settings.html">
+                        <p>Settings</p>
+                    </a>
+                </li>
+                <li>
+                    <a href="/help.html">
+                        <p>Help</p>
                     </a>
                 </li>
                 </li>
                 <li class="active-pro">
-                    <a href="./upgrade.html">
+                    <a href="/upgrade.html">
                         <i class="now-ui-icons arrows-1_cloud-download-93"></i>
                         <p>Upgrade to PRO</p>
                     </a>
@@ -102,7 +112,7 @@
                             <span class="navbar-toggler-bar bar3"></span>
                         </button>
                     </div>
-                    <a class="navbar-brand" href="#dashboard">Table List</a>
+                    <a class="navbar-brand" href="#dashboard">@yield('pagename')</a>
                 </div>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navigation"
                         aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
@@ -177,8 +187,8 @@
                             </a>
                         </li>
                         <li>
-                            <a href="http://blog.creative-tim.com">
-                                Help | Creative Tim Blog
+                            <a href="https://recruitingtool.io/">
+                                Help | Recruiting Tool
                             </a>
                         </li>
                     </ul>

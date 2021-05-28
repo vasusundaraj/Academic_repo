@@ -54,7 +54,7 @@ class EmailtemplateController extends Controller
     {
         $emailtemplate = Emailtemplate::find($id);
         $emailtemplates = Emailtemplate::all();
-        return view('layout.template',['emailtemplate'=>$emailtemplate, 'layout'=> 'show', 'emailtemplates'=>$emailtemplates]);
+        return view('layout.template',['emailtemplate'=>$emailtemplate, 'layout'=> 'show']);
     }
 
     /**

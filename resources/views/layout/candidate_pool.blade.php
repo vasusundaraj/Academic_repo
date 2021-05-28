@@ -4,6 +4,10 @@
     Candidate Pool | Microsoft SWE
 @endsection
 
+@section('pagename')
+  Jobs
+@endsection
+
 @section('content')
     <div class="row">
         <div class="col-md-12">
@@ -32,50 +36,24 @@
                                 <td> (210) xxx-xxxx</td>
 
                                 <td>
-                                    <a class="context-menu-one" href="#"> test_email@gmail.com </a>
-                                    <div id="contextMenu" class="context-menu"
-                                         style="display:none">
-                                        <ul>
+                                        <a data-toggle="dropdown" class="dropdown-toggle"
+                                           a href="#"> lsdmkeke2021@gmail.com </a>
+                                        <ul class="dropdown-menu" >
                                             <li><a href="/sendemail">Send Now</a></li>
-                                            <li><a href="#">Send Template</a></li>
-                                            <li><a href="#">Set Schedule</a></li>
+                                            <li><a href="/sendtemplate/">Send Template</a></li>
+                                            <li><a href="/getscheduleremails">Set Schedule</a></li>
 
                                         </ul>
-                                    </div>
-                                    <script>
-                                        document.onclick = hideMenu;
-                                        document.oncontextmenu = rightClick;
 
-                                        function hideMenu() {
-                                            document.getElementById(
-                                                "contextMenu").style.display = "none"
-                                        }
-
-                                        function rightClick(e) {
-                                            e.preventDefault();
-
-                                            if (document.getElementById(
-                                                "contextMenu").style.display == "block")
-                                                hideMenu();
-                                            else {
-                                                var menu = document
-                                                    .getElementById("contextMenu")
-
-                                                menu.style.display = 'block';
-                                                menu.style.left = e.pageX + "px";
-                                                menu.style.top = e.pageY + "px";
-                                            }
-                                        }
-                                    </script>
                                 </td>
 
 
                                 <td><a href="{{ asset('uploads/functionalSample.pdf') }}">View Resume</a></td>
-                                <td> -</td>
+                                <td> - </td>
                             </tr>
 
                             </tbody>
-
+s
                         </table>
                     </div>
                 </div>
